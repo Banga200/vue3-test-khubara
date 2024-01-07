@@ -1,6 +1,6 @@
 <template>
-  <v-expansion-panels accordion multiple>
-    <v-expansion-panel v-for="category in categories" :key="category.id">
+  <v-expansion-panels multiple>
+    <v-expansion-panel v-for="category in categories" :key="category.id" expand-icon="mdi-chevron-down">
       <v-expansion-panel-title>
         {{ category.name }}
       </v-expansion-panel-title>
@@ -43,31 +43,4 @@ const categories = ref([
         }
       ]
 )
-//   components: {
-//     CategoryItem: {
-//       template: `
-//         <v-list-item>
-//           <v-list-item-content>
-//             <v-list-item-title>{{ item.name }}</v-list-item-title>
-//           </v-list-item-content>
-//           <v-list-item-action>
-//             <v-icon v-if="item.children.length > 0">mdi-chevron-right</v-icon>
-//           </v-list-item-action>
-//           <v-list
-//             dense
-//             v-if="item.children.length > 0"
-//             :key="item.id + '-nested'"
-//           >
-//             <template v-for="(child, index) in item.children">
-//               <category-item
-//                 :key="index"
-//                 :item="child"
-//               />
-//             </template>
-//           </v-list>
-//         </v-list-item>
-//       `
-//     }
-//   }
-
 </script>
